@@ -54,11 +54,12 @@ form {
   max-width: 600px;
 }
 
-input {
+input, textarea {
   width: 100%;
   padding: .5em;
   display: block;
   margin: .5em 0;
+  border: 1px solid #ccc;
 }
 
 label {
@@ -70,9 +71,15 @@ input[type=submit] {
   color: #fff;
   border: none;
   padding: 1em;
+  font-weight: 700;
   margin-top: 20px;
   background: #00BD8D;
   text-transform: uppercase;
+  transition: background .2s ease-out;
+}
+
+input[type=submit]:hover {
+  background: #009D74;
 }
 
 /******************************************
