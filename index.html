@@ -21,11 +21,11 @@
     <main>
       <div class="container">
         <h2>Contact form with <a href="http://formspree.io">Formspree</a></h2>
-        <form action="//formspree.io/matt.m.soria@gmail.com" method="POST">
+        <form action="//formspree.io/matt.m.soria@gmail.com" method="POST" data-parsley-validate>
           <label for="name">Name:</label>
-          <input id="name" type="text" name="name" placeholder="Name">
+          <input id="name" type="text" name="name" placeholder="Name" required="true" data-parsley-error-message="I need to know what to call ya!">
           <label id="email" for="email">Email:</label>
-          <input type="email" name="_replyto" placeholder="Email">
+          <input type="email" name="_replyto" placeholder="Email" required="true" data-parsley-type="email" data-parsley-error-message="Oops! I'm gonna need a valid email, please!">
           <label for="message">Message:</label>
           <textarea id="message" name="message" cols="30" rows="10"></textarea>
           <input type="hidden" name="_next" value="/thanks.html" />
@@ -41,6 +41,7 @@
     </footer>
     
     <script src="js/jquery-1.11.3.min.js"></script>
+    <script src="js/parsely.min.js"></script>
     <script src="js/main.js"></script>
   </body>
 </html>
