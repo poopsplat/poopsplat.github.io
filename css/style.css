@@ -115,7 +115,7 @@ input[type=submit]:hover {
   padding: 1em;
   display: none;
   margin: -1em 0 1em;
-  background: rgba(0,0,0,.05);
+  background: rgba(0,0,0,.1);
 }
 .parsley-errors-list.filled {
   display: block;
@@ -129,7 +129,7 @@ input[type=submit]:hover {
 /*******************************************/
 pre {
   padding: 1em;
-  background: rgba(0,0,0,.05);
+  background: rgba(0,0,0,.1);
 }
 pre code {
   margin: 0;
