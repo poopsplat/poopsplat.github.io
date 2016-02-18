@@ -13,7 +13,7 @@ $(document).ready(function() {
         $contactForm.prepend('<div class="alert alert-loading"><p>Sending message…</p></div>');
       },
       success: function(data) {
-        $contactForm.addClass('form-sent').find('.alert').removeClass('alert-loading').addClass('alert-sucess').html('<p>Thanks! Your message has been sent!</p>');
+        $contactForm.addClass('form-sent').find('.alert').removeClass('alert-loading').addClass('alert-success').html('<p>Thanks! Your message has been sent!</p>');
       },
       error: function(err) {
         $contactForm.find('.alert').removeClass('alert-loading').addClass('alert-error').html('<p>Ops, there was an error.</p>');
