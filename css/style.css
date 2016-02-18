@@ -68,6 +68,7 @@ body {
 /*******************************************/
 form {
   width: 100%;
+  position: relative;
 }
 
 input, textarea {
@@ -103,6 +104,35 @@ input[type=submit] {
 
 input[type=submit]:hover {
   background: #009D74;
+}
+
+/* Ajax messages */
+.alert {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  color: #444;
+  display: flex;
+  font-size: 18px;
+  min-height: 200px;
+  font-weight: bold;
+  position: absolute;
+  text-align: center;
+  background: rgba(255,255,255,.8);
+}
+.alert p {
+  margin: auto;
+}
+.alert.alert-success {
+  color: #00BD8D;
+  background: rgba(0,0,0,.1);
+}
+.alert.alert-error {
+  color: #EC2B00;
+}
+form.form-sent .form-content {
+  display: none;
 }
 
 /* Parsely error message */
