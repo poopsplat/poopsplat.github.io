@@ -42,14 +42,16 @@
           <pre>
             <code>
 &lt;form action="//formspree.io/youremail@gmail.com" method="POST" data-parsley-validate&gt;
-  &lt;label for="name"&gt;Name:&lt;/label&gt;
-  &lt;input id="name" type="text" name="name" placeholder="Name" required="true" data-parsley-error-message="I need to know what to call ya!"&gt;
-  &lt;label id="email" for="email"&gt;Email:&lt;/label&gt;
-  &lt;input type="email" name="_replyto" placeholder="Email" required="true" data-parsley-type="email" data-parsley-error-message="Oops! I'm gonna need a valid email, please!"&gt;
-  &lt;label for="message"&gt;Message:&lt;/label&gt;
-  &lt;textarea id="message" name="message" cols="30" rows="10"&gt;&lt;/textarea&gt;
-  &lt;input type="hidden" name="_next" value="/thanks.html" /&gt;
-  &lt;input type="submit" value="Send"&gt;
+  &lt;div class="form-content"&gt;
+    &lt;label for="name"&gt;Name:&lt;/label&gt;
+    &lt;input id="name" type="text" name="name" placeholder="Name" required="true" data-parsley-error-message="I need to know what to call ya!"&gt;
+    &lt;label id="email" for="email"&gt;Email:&lt;/label&gt;
+    &lt;input type="email" name="_replyto" placeholder="Email" required="true" data-parsley-type="email" data-parsley-error-message="Oops! I'm gonna need a valid email, please!"&gt;
+    &lt;label for="message"&gt;Message:&lt;/label&gt;
+    &lt;textarea id="message" name="message" cols="30" rows="10"&gt;&lt;/textarea&gt;
+    &lt;input type="hidden" name="_next" value="/thanks.html" /&gt;
+    &lt;input type="submit" value="Send"&gt;
+  &lt;/div&gt;
 &lt;/form&gt;
             </code>
           </pre>
@@ -74,7 +76,7 @@
           </form>
         </div>
         <div class="right">
-          <h3>The markup:</h3>
+          <h3>The JavaScript (markup is the same):</h3>
           <pre>
             <code>
 var $contactForm = $('#ajaxContactForm');
