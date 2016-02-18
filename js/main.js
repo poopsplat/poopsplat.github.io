@@ -1,6 +1,5 @@
 $(document).ready(function() {
-
-  var $contactForm = $('#contactForm');
+  var $contactForm = $('#ajaxContactForm');
 
   $contactForm.submit(function(e) {
     e.preventDefault();
@@ -16,7 +15,7 @@ $(document).ready(function() {
         $contactForm.addClass('form-sent').find('.alert').removeClass('alert-loading').addClass('alert-success').html('<p>Thanks! Your message has been sent!</p>');
       },
       error: function(err) {
-        $contactForm.find('.alert').removeClass('alert-loading').addClass('alert-error').html('<p>Ops, there was an error.</p>');
+        $contactForm.find('.alert').removeClass('alert-loading').addClass('alert-error').html('<p>Oopsies! There was an error.</p>');
       }
     });
   });

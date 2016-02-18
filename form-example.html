@@ -56,6 +56,51 @@
         </div>
 
       </div>
+
+      <div class="container clearfix">
+        <div class="left">
+          <h3>The form using Ajax:</h3>
+          <form id="ajaxContactForm" action="//formspree.io/matt.m.soria@gmail.com" method="POST" data-parsley-validate>
+            <div class="form-content">
+              <label for="name">Name:</label>
+              <input id="name" type="text" name="name" placeholder="Name" required="true" data-parsley-error-message="I need to know what to call ya!">
+              <label id="email" for="email">Email:</label>
+              <input type="email" name="_replyto" placeholder="Email" required="true" data-parsley-type="email" data-parsley-error-message="Oops! I'm gonna need a valid email, please!">
+              <label for="message">Message:</label>
+              <textarea id="message" name="message" cols="30" rows="10"></textarea>
+              <input type="hidden" name="_next" value="/thanks.html" />
+              <input type="submit" value="Send">
+            </div>
+          </form>
+        </div>
+        <div class="right">
+          <h3>The markup:</h3>
+          <pre>
+            <code>
+var $contactForm = $('#ajaxContactForm');
+
+$contactForm.submit(function(e) {
+  e.preventDefault();
+  $.ajax({
+    url: '//formspree.io/matt.m.soria@gmail.com',
+    method: 'POST',
+    data: $(this).serialize(),
+    dataType: 'json',
+    beforeSend: function() {
+      $contactForm.prepend('&lt;div class="alert alert-loading"&gt;&lt;p&gt;Sending message…&lt;/p&gt;&lt;/div&gt;');
+    },
+    success: function(data) {
+      $contactForm.addClass('form-sent').find('.alert').removeClass('alert-loading').addClass('alert-success').html('&lt;p&gt;Thanks! Your message has been sent!&lt;/p&gt;');
+    },
+    error: function(err) {
+      $contactForm.find('.alert').removeClass('alert-loading').addClass('alert-error').html('&lt;p&gt;Oopsies! There was an error.&lt;/p&gt;');
+    }
+  });
+});
+            </code>
+          </pre>
+        </div>
+      </div>
     </main>
 
     <footer>
